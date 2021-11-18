@@ -1,0 +1,23 @@
+1. In ioHandler.js, create a function to unzip the zip file using the "unzipper" library. 
+    - npm install unzipper
+fs.createReadStream('path/to/archive.zip')
+    .pipe(unzipper.Extract({ path: '"MILESTONE 1"/unzipped' }));
+    - once all files are unzipped, show the message: "Extraction operation complete"
+- The unzipping should create a directory called 'unzipped' with all the images
+
+
+2. function to take in a directory path as a parameter which gives back an array of file paths for only the png files that exist in that directory
+
+
+3. function that takes two parameters
+    - first parameter should represent the path to a png image
+    - second parameter represents the output path where your grayscaled image should be placed
+- use PNGJS library to parse the (pathIn) image
+    - gives an array of (color channels ) representing pixels representing the PNG image passed
+    - once this array of pixels is given access:
+
+    1. Loop through the pixel array, modifying the RGB values to create a grayscale filter effect using https://tannerhelland.com/2011/10/01/grayscale-image-algorithm-vb6.html
+    Gray = (Red + Green + Blue) / 3
+    
+
+    2. Save the modified pixel array into a new PNG image which should be written to your pathOut directory.
